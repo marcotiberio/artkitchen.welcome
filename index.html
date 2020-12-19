@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>☁️ Buy Clouds</title>
+	<style>
+		/* font */
+		@font-face {
+			font-family: 'PF-Ronda-Seven';
+			src:url('font/PF-Ronda-Seven.ttf.woff') format('woff'),
+				url('font/PF-Ronda-Seven.ttf.svg#PF-Ronda-Seven') format('svg'),
+				url('font/PF-Ronda-Seven.ttf.eot'),
+				url('font/PF-Ronda-Seven.ttf.eot?#iefix') format('embedded-opentype'); 
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		/* basic reset */
+		html, body, canvas {
+			box-sizing: border-box;
+			margin: 0; padding: 0;
+			background-color: black;
+			font-family: 'PF-Ronda-Seven';
+		}
+		/* you'll need to define a width && height to make it work */
+		#p5 { 
+			display: block;
+			margin: 0;
+			position: absolute;
+			/* top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%); */
+			width: 100vw;
+			height: 100vh;
+		}
+
+		.border-top {
+			display: none;
+			grid-template-columns: repeat(9, 1fr);
+			grid-template-rows: 1fr;
+			width: 100vw;
+			height: 10px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			/* transform: rotate(90deg); */
+		}
+
+		.border-top div {
+			border-right: 1px solid #000000;
+			height: 100vh;
+		}
+
+		.border-right {
+			display: none;
+			grid-template-columns: repeat(11, 1fr);
+			grid-template-rows: 1fr;
+			width: 125vw;
+			height: 300vh;
+			position: fixed;
+			top: -50%;
+			left: -50%;
+			z-index: 1;
+			transform: rotate(90deg);
+		}
+
+		.border-right div {
+			border-right: 1px solid #000000;
+		}
+
+
+		header {
+			width: auto;
+			height: 10vh;
+			margin: 2%; padding: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+			z-index: 3000;
+		}
+
+		header img {
+			width: auto;
+			width: 170px;
+			height: auto;
+		}
+
+		.logo:hover {
+			cursor: pointer;
+		}
+
+		#openModal:hover {
+			cursor: pointer;
+		}
+		
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #ffffff;
+			margin: auto;
+			padding: 20px;
+			border: 2px solid #D31D1D;
+			width: 275px;
+			position: absolute;
+			top: 28vh;
+			left: 2%;
+		}
+
+		.modal-content p {
+			font-size: 10px;
+		}
+
+		/* The Close Button */
+		.close {
+			position: absolute;
+			color: #D31D1D;
+			/* float: right; */
+			font-size: 16px;
+			font-weight: bold;
+			top: 5px;
+			right: 10px;
+
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #ffffff;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	
+	<img src="logos/artKitchen_logo.png" alt="buycloud logo" class="logo" onclick="window.location.href='https://artkitchengallery.defrost.online/'"><!-- Trigger/Open The Modal -->
+
+	<div id="p5"><!-- This div is the container in which P5.js will place a canvas element --></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+	<script src="js/clouds.js"></script>
+	<!-- <script src="js/clouds.velocity.js"></script> -->
+
+</body>
+</html>
